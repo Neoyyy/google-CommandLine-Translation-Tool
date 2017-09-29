@@ -1,0 +1,22 @@
+{
+  "name": "google-commandline-translation-tool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "neoyyy <zhuxiong001@gmail.com>",
+  "license": "ISC",
+  "bin":{
+  	"gg":"./index.js"
+  },
+  "dependencies":{
+  	"request":"^2.81.0",
+  	"superagent":"^3.6.0",
+    "cli-spinner": "^0.2.6",
+    "is-chinese": "^1.2.5",
+    "configstore": "^2.0.0",
+    "got": "^6.3.0",
+  }
+}
