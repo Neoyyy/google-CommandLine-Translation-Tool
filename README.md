@@ -12,9 +12,9 @@
    确认您已经安装node.js，如果没有请安装[Node.js](https://nodejs.org/zh-cn/)    
    clone本项目并通过命令行进入项目目录      
 `git clone https://github.com/Neoyyy/google-CommandLine-Translation-Tool`  
-   顺序执行以下命令           
- `npm install`  
- `npm link`   
+   顺序执行以下命令  
+   `npm install`  
+   `npm link`   
  - **食用方法**    
  `gg 您要查找的词`  
  - **另外**  
