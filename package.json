@@ -1,12 +1,24 @@
 {
-  "name": "google-commandline-translation-tool",
-  "version": "1.0.0",
-  "description": "",
+  "name": "googleCmlDict",
+  "version": "0.1.0",
+  "description": "google-CommandLine-Translation-Tool",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "neoyyy <zhuxiong001@gmail.com>",
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Neoyyy/google-CommandLine-Translation-Tool.git"
+  },
+
+  "keywords":[
+    "google",
+    "commandline",
+    "translation"
+  ],
+	
+  "author": "neoyyy",
   "license": "ISC",
   "bin":{
   	"gg":"./index.js"
@@ -17,6 +29,6 @@
     "cli-spinner": "^0.2.6",
     "is-chinese": "^1.2.5",
     "configstore": "^2.0.0",
-    "got": "^6.3.0",
+    "got": "^6.3.0"
   }
 }

@@ -36,8 +36,8 @@ const getResult = (input, spinner)=>{
 
 						  				console.log(dealresult(res));
 										    								}
-									}
-								});
+									});
+								
 			},function(err){
 				console.log("get token err:"+err);
 			});

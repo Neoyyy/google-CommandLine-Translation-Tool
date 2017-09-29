@@ -13,7 +13,7 @@ function dealresult(response){
 	
 	if (obj[1] == null) {
 		//console.log('你的词可能有错，请再次查询，或者词没错请联系我 ');
-		result = '你的词可能有错，请重试，或者词没错请联系我 ';
+		result = '你的词可能有错，请重试，或者词没错请联系我 https://github.com/Neoyyy/google-CommandLine-Translation-Tool ';
 	}else{
 		cleannull(obj);
 		if (obj[0][0][1] !== undefined) {
@@ -71,22 +71,7 @@ function cleannull(arr){
 
 
 		return arr;
-/*
-		arr.forEach(function(obj,index){
-			if (obj == null) {
-				//console.log("有个空,准备删除");
-				arr.splice(index,1);
-			
-			}else{
-				if (Array.isArray(obj)) {
-						//console.log("是数组，准备递归");
-						cleannull(obj);
 
-				}
-			}
-			
-		});		
-		*/
 	}
 
 
