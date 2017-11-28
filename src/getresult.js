@@ -43,8 +43,11 @@ const getResult = (input, spinner)=>{
 						  					console.log("pronunciation : ".green+result.pronunciation);
 						  					console.log("translate : ".green+result.translate);
 						  					console.log("intro : ".green+result.intro);
-						  					console.log("other :".green);
-						  					printArray(result.other);
+						  					
+						  					if (result.other != '') {
+						  						console.log("other :".green);
+						  						printArray(result.other);
+						  					}
      									}catch(err){
      										console.log(err.message)
      										console.log("出错了..欢迎来提issue:https://github.com/Neoyyy/google-CommandLine-Translation-Tool/issues".red)

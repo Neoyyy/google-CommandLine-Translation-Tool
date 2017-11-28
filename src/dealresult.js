@@ -58,8 +58,6 @@ function dealresult(response){
 
 			result.other = (obj[2] == 'en')? (obj[6][0][1][0].concat(obj[6][0][1][1])) : obj[6][0];
 
-		}else{
-			throw new Error("other not exist");
 		}
 	}
 
