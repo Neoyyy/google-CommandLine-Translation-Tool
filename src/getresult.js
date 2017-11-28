@@ -46,7 +46,7 @@ const getResult = (input, spinner)=>{
 						  					console.log("other :".green);
 						  					printArray(result.other);
      									}catch(err){
-     										console.log(err)
+     										console.log(err.message)
      										console.log("出错了..欢迎来提issue:https://github.com/Neoyyy/google-CommandLine-Translation-Tool/issues".red)
      									}
      									
