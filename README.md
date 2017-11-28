@@ -6,7 +6,7 @@
     使用node.js编写    
     可在本机任何目录下打开命令行使用  
 
- - **效果演示**
+ - **效果演示**  
  ![](https://github.com/Neoyyy/google-CommandLine-Translation-Tool/blob/master/demo.gif)
  - **安装说明**    
    确认您已经安装node.js，如果没有请安装[Node.js](https://nodejs.org/zh-cn/)    
