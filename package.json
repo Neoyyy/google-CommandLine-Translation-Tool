@@ -6,29 +6,27 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-
   "repository": {
     "type": "git",
     "url": "https://github.com/Neoyyy/google-CommandLine-Translation-Tool.git"
   },
-
-  "keywords":[
+  "keywords": [
     "google",
     "commandline",
     "translation"
   ],
-	
   "author": "neoyyy",
   "license": "ISC",
-  "bin":{
-  	"gg":"./index.js"
+  "bin": {
+    "gg": "./index.js"
   },
-  "dependencies":{
-  	"request":"^2.81.0",
-  	"superagent":"^3.6.0",
+  "dependencies": {
     "cli-spinner": "^0.2.6",
-    "is-chinese": "^1.2.5",
+    "colors": "^1.1.2",
     "configstore": "^2.0.0",
-    "got": "^6.3.0"
+    "got": "^6.3.0",
+    "is-chinese": "^1.2.5",
+    "request": "^2.81.0",
+    "superagent": "^3.6.0"
   }
 }

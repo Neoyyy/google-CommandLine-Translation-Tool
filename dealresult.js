@@ -1,7 +1,7 @@
 
 function dealresult(response){
 	let obj = eval(response.text);
-	
+	var isEn = false;
 	let result = {
 		orginal : '',
 		pronunciation : '',
@@ -11,11 +11,18 @@ function dealresult(response){
 		
 	}
 	
-	if (obj[1] == null) {
-		//console.log('你的词可能有错，请再次查询，或者词没错请联系我 ');
+	if (obj[0] == null) {
+		console.log(obj);
+
 		result = '你的词可能有错，请重试，或者词没错请联系我 https://github.com/Neoyyy/google-CommandLine-Translation-Tool ';
 	}else{
 		cleannull(obj);
+
+
+	if (obj[1] == 'en') {
+		isEn = true;
+	}
+
 		if (obj[0][0][1] !== undefined) {
 			result.orginal = obj[0][0][1];
 		}
@@ -26,16 +33,32 @@ function dealresult(response){
 		if (obj[0][0][0] !== undefined) {
 			result.translate = obj[0][0][0];
 		}
-		if (obj[1][0][0] !== undefined && obj[1][0][2][0][1] !== undefined) {
-			result.intro = obj[1][0][0]+','+obj[1][0][2][0][1] ;
-		}else if (obj[1][0][0] !== undefined) {
-			result.intro = obj[1][0][0] ;
-		}else if (obj[1][0][2][0][1] !== undefined) {
-			result.intro = obj[1][0][2][0][1] ;
+
+		if (isEn) {
+			if (obj[2][0][0] !== undefined && obj[2][0][2][0][1] !== undefined) {
+				result.intro = obj[2][0][0]+','+obj[2][0][2][0][1] ;
+			}else if (obj[2][0][0] !== undefined) {
+				result.intro = obj[2][0][0] ;
+			}else if (obj[2][0][2][0][1] !== undefined) {
+				result.intro = obj[2][0][2][0][1] ;
+			}
+
+
+		}else{
+					
+			if (obj[1][0][0] !== undefined && obj[1][0][2][0][1] !== undefined) {
+				result.intro = obj[1][0][0]+','+obj[1][0][2][0][1] ;
+			}else if (obj[1][0][0] !== undefined) {
+				result.intro = obj[1][0][0] ;
+			}else if (obj[1][0][2][0][1] !== undefined) {
+				result.intro = obj[1][0][2][0][1] ;
+			}
 		}
+
+
 		if (obj[6][0] !== undefined) {
 
-			result.other = (obj[2] == 'en')? (obj[6][0][1][0]+obj[6][0][1][1]) : obj[6][0];
+			result.other = (obj[2] == 'en')? (obj[6][0][1][0].concat(obj[6][0][1][1])) : obj[6][0];
 
 		}
 	}

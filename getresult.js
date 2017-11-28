@@ -2,6 +2,7 @@ const superagent = require('superagent');
 const isChinese = require('is-chinese');
 const token = require('./gettoken.js');
 const dealresult = require('./dealresult.js');
+const colors = require('colors');
 
 const getResult = (input, spinner)=>{
 	const isCh = isChinese(input);
@@ -34,13 +35,35 @@ const getResult = (input, spinner)=>{
  											console.log("query err:"+err);
      								} else {
 
-						  				console.log(dealresult(res));
+
+     									var result = dealresult(res);
+
+     									
+     									console.log("-----------result-----------");
+     									console.log("orginal : ".green+result.orginal);
+						  				console.log("pronunciation : ".green+result.pronunciation);
+						  				console.log("translate : ".green+result.translate);
+						  				console.log("intro : ".green+result.intro);
+						  				console.log("other :".green);
+						  				printArray(result.other);
+						  				
+						  				
 										    								}
 									});
 								
 			},function(err){
 				console.log("get token err:"+err);
 			});
+}
+
+function printArray(arr){
+	arr.forEach(function(ele){
+		if ("string" == typeof (ele) ) {
+			console.log("       "+ele);
+		}else{
+			printArray(ele);
+		}
+	});
 }
 
 module.exports = getResult
