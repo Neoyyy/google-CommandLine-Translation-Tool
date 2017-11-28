@@ -35,19 +35,21 @@ const getResult = (input, spinner)=>{
  											console.log("query err:"+err);
      								} else {
 
+     									try{
+     										var result = dealresult(res);
 
-     									var result = dealresult(res);
-
+     										console.log("-----------result-----------".red);
+     										console.log("orginal : ".green+result.orginal);
+						  					console.log("pronunciation : ".green+result.pronunciation);
+						  					console.log("translate : ".green+result.translate);
+						  					console.log("intro : ".green+result.intro);
+						  					console.log("other :".green);
+						  					printArray(result.other);
+     									}catch(err){
+     										console.log(err)
+     										console.log("出错了..欢迎来提issue:https://github.com/Neoyyy/google-CommandLine-Translation-Tool/issues".red)
+     									}
      									
-     									console.log("-----------result-----------");
-     									console.log("orginal : ".green+result.orginal);
-						  				console.log("pronunciation : ".green+result.pronunciation);
-						  				console.log("translate : ".green+result.translate);
-						  				console.log("intro : ".green+result.intro);
-						  				console.log("other :".green);
-						  				printArray(result.other);
-						  				
-						  				
 										    								}
 									});
 								
@@ -60,7 +62,7 @@ function printArray(arr){
 	arr.forEach(function(ele){
 		if ("string" == typeof (ele) ) {
 			console.log("       "+ele);
-		}else{
+		}else if("object"== typeof (ele)){
 			printArray(ele);
 		}
 	});
